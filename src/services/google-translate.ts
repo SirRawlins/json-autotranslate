@@ -51,7 +51,9 @@ export class GoogleTranslate implements TranslationService {
   }
 
   supportsLanguage(language: string) {
-    return this.supportedLanguages.includes(language.toLowerCase());
+    return this.supportedLanguages.includes(
+        this.cleanLanguageCode(language)
+    );
   }
 
   cleanLanguageCode(languageCode: string) {
